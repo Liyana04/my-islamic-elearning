@@ -1,5 +1,6 @@
 import './style.css'
 import heroImg from './assets/hero.svg'
+import logoImg from '/favicon.svg'
 
 const app = document.querySelector('#app')
 
@@ -8,238 +9,237 @@ const DUMMY_ACCOUNT = { email: 'user@example.com', password: 'password' }
 
 // Simple client-side routing using location.hash
 function navLink(label, hash) {
-  return `<a class="nav-link" href="#${hash}">${label}</a>`
+  return `<a class="text-gray-900 px-2.5 py-2 rounded hover:bg-gray-100" href="#${hash}">${label}</a>`
 }
 
 const templates = {
   navbar: () => `
-    <header class="site-header">
-      <div class="brand">
-        <img src="${heroImg}" alt="logo" class="logo-img"/>
-        <span class="brand-title">MoonTree Learning</span>
+    <header class="flex justify-between items-center px-6 py-[18px] border-b border-gray-200">
+      <div class="flex items-center gap-3">
+        <img src="${logoImg}" alt="logo" class="w-12 h-12 object-cover rounded-lg"/>
       </div>
-      <nav class="site-nav">
-        <div class="nav-item">${navLink('Home', '')}</div>
-        <div class="nav-item dropdown">
-          <a class="nav-link" href="#about">About Us ▾</a>
-          <div class="dropdown-menu">
-            <a href="#about-team">Our Experts</a>
-            <a href="#about-mission">Our Mission</a>
-            <a href="#about-contact">Contact Us</a>
+      <nav class="flex items-center gap-3">
+        <div>${navLink('Home', '')}</div>
+        <div class="relative group">
+          <a class="text-gray-900 px-2.5 py-2 rounded hover:bg-gray-100" href="#about">About Us ▾</a>
+          <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 p-2.5 rounded-lg min-w-[180px] shadow-lg z-60">
+            <a href="#about-team" class="block px-2.5 py-2 rounded hover:bg-gray-100">Our Experts</a>
+            <a href="#about-mission" class="block px-2.5 py-2 rounded hover:bg-gray-100">Our Mission</a>
+            <a href="#about-contact" class="block px-2.5 py-2 rounded hover:bg-gray-100">Contact Us</a>
           </div>
         </div>
-        <div class="nav-item">${navLink('FAQs', 'faqs')}</div>
-        <div class="nav-item dropdown">
-          <a class="nav-link" href="#grow">Grow With Us ▾</a>
-          <div class="dropdown-menu">
-            <a href="#grow-creators">As Creators</a>
-            <a href="#grow-preschools">As Preschools</a>
-            <a href="#grow-partners">As Partners</a>
+        <div>${navLink('FAQs', 'faqs')}</div>
+        <div class="relative group">
+          <a class="text-gray-900 px-2.5 py-2 rounded hover:bg-gray-100" href="#grow">Grow With Us ▾</a>
+          <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 p-2.5 rounded-lg min-w-[180px] shadow-lg z-60">
+            <a href="#grow-creators" class="block px-2.5 py-2 rounded hover:bg-gray-100">As Creators</a>
+            <a href="#grow-preschools" class="block px-2.5 py-2 rounded hover:bg-gray-100">As Preschools</a>
+            <a href="#grow-partners" class="block px-2.5 py-2 rounded hover:bg-gray-100">As Partners</a>
           </div>
         </div>
-        <div class="nav-item dropdown">
-          <a class="nav-link" href="#products">Our Products ▾</a>
-          <div class="dropdown-menu">
-            <a href="#prod-1">Product 1</a>
-            <a href="#prod-2">Product 2</a>
-            <a href="#prod-3">Product 3</a>
+        <div class="relative group">
+          <a class="text-gray-900 px-2.5 py-2 rounded hover:bg-gray-100" href="#products">Our Products ▾</a>
+          <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 p-2.5 rounded-lg min-w-[180px] shadow-lg z-60">
+            <a href="#prod-1" class="block px-2.5 py-2 rounded hover:bg-gray-100">Product 1</a>
+            <a href="#prod-2" class="block px-2.5 py-2 rounded hover:bg-gray-100">Product 2</a>
+            <a href="#prod-3" class="block px-2.5 py-2 rounded hover:bg-gray-100">Product 3</a>
           </div>
         </div>
-        <div class="nav-actions">
-          <a class="nav-cta" href="#auth-signin">Sign In</a>
-          <a class="nav-cta outline" href="#auth-signup">Sign Up</a>
+        <div class="flex gap-3">
+          <a class="inline-block px-3 py-2 rounded-lg no-underline text-gray-900 hover:bg-gray-100" href="#auth-signin">Sign In</a>
+          <a class="inline-block px-3 py-2 rounded-lg border border-gray-200 no-underline text-gray-900 hover:bg-gray-100" href="#auth-signup">Sign Up</a>
         </div>
       </nav>
     </header>
   `,
   footer: () => `
-    <footer class="site-footer">
-      <div class="footer-grid">
-        <div class="col">
-          <div class="brand"><img src="${heroImg}" class="logo-img" alt=""/><div>MOONTREE</div></div>
-          <small>MOSAIC Tower 2, 1, Jalan Impact, Cyberjaya</small>
+    <footer class="p-6 border-t border-gray-200 text-left">
+      <div class="grid grid-cols-4 gap-3 max-w-[1126px] mx-auto mb-6">
+        <div>
+          <div class="flex items-center gap-3 mb-3"><img src="${logoImg}" class="w-12 h-12 object-cover rounded-lg" alt=""/><div class="font-semibold">MOONTREE</div></div>
+          <small class="text-gray-600 text-xs">MOSAIC Tower 2, 1, Jalan Impact, Cyberjaya</small>
         </div>
-        <div class="col">
-          <h4>Menu</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Help</a></li>
+        <div>
+          <h4 class="font-semibold mb-2">Menu</h4>
+          <ul class="list-none p-0 space-y-1">
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Home</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">FAQs</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Help</a></li>
           </ul>
         </div>
-        <div class="col">
-          <h4>About</h4>
-          <ul>
-            <li><a href="#">Our Experts</a></li>
-            <li><a href="#">Privacy & Term</a></li>
-            <li><a href="#">Contact Us</a></li>
+        <div>
+          <h4 class="font-semibold mb-2">About</h4>
+          <ul class="list-none p-0 space-y-1">
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Our Experts</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Privacy & Term</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-gray-900">Contact Us</a></li>
           </ul>
         </div>
-        <div class="col">
-          <h4>Our Products</h4>
-          <ul>
-            <li>Product 1</li>
-            <li>Product 2</li>
-            <li>Product 3</li>
+        <div>
+          <h4 class="font-semibold mb-2">Our Products</h4>
+          <ul class="list-none p-0 space-y-1">
+            <li class="text-gray-600">Product 1</li>
+            <li class="text-gray-600">Product 2</li>
+            <li class="text-gray-600">Product 3</li>
           </ul>
         </div>
       </div>
-      <small>© ${new Date().getFullYear()} Moontree (M) Sdn Bhd</small>
+      <small class="text-gray-600 text-xs">© ${new Date().getFullYear()} Moontree (M) Sdn Bhd 202501007700 (1609114-P) © 2026</small>
     </footer>
   `,
   home: () => `
-    <section class="hero-section hero-landing">
-      <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow">E-COURSE PLATFORM</div>
-          <h1>A Fun Way to Learn Islamic Life as a Family</h1>
-          <p class="lead">Interactive stories and playful activities connecting your family to Islamic values and meaningful lessons through joy and wonder.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#signup">Join for free</a>
-            <a class="btn outline" href="#howitworks">Watch how it works</a>
+    <section class="py-12">
+      <div class="max-w-[1126px] mx-auto px-6 flex justify-between items-center gap-6">
+        <div class="flex-1 text-left">
+          <div class="text-blue-600 font-bold tracking-wider text-sm mb-3">E-COURSE PLATFORM</div>
+          <h1 class="text-5xl font-bold mb-6 text-gray-900">A Fun Way to Learn Islamic Life as a Family</h1>
+          <p class="text-lg text-gray-600 max-w-[560px] mb-4">Interactive stories and playful activities connecting your family to Islamic values and meaningful lessons through joy and wonder.</p>
+          <div class="flex gap-3 mt-5 mb-7">
+            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#signup">Join for free</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#howitworks">Watch how it works</a>
           </div>
 
-          <div class="hero-stats">
-            <div class="stat">
-              <div class="stat-num">700+</div>
-              <div class="stat-label">Hours of content</div>
+          <div class="flex gap-6 mt-7 items-center">
+            <div class="flex flex-col items-start">
+              <div class="font-bold text-xl text-gray-900">700+</div>
+              <div class="text-sm text-gray-600">Hours of content</div>
             </div>
-            <div class="stat divider">
-              <div class="stat-num">575k+</div>
-              <div class="stat-label">GlobalTalk Users</div>
+            <div class="flex flex-col items-start pl-6 border-l border-gray-200">
+              <div class="font-bold text-xl text-gray-900">575k+</div>
+              <div class="text-sm text-gray-600">GlobalTalk Users</div>
             </div>
           </div>
         </div>
-        <div class="hero-visual">
+        <div class="flex-1 flex justify-center">
           <img src="${heroImg}" alt="hero" />
         </div>
       </div>
     </section>
 
-    <section class="page section-alt">
-      <div class="container two-col">
-        <div class="img-col"><img src="${heroImg}" alt="family"/></div>
-        <div class="text-col">
-          <h2>Nurturing family faith with joy.</h2>
-          <p>Easily teach your kids Islamic values through playful stories that build lifelong love for the Deen.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#signup">Join for free</a>
-            <a class="btn outline" href="#howitworks">Watch how it works</a>
+    <section class="py-12 bg-[#fbfaf9]">
+      <div class="max-w-[1126px] mx-auto px-6 flex gap-8 items-center">
+        <div><img src="${heroImg}" alt="family" class="w-[420px] rounded-lg object-cover"/></div>
+        <div class="max-w-[560px]">
+          <h2 class="text-2xl font-semibold mb-3 text-gray-900">Nurturing family faith with joy.</h2>
+          <p class="text-gray-600 mb-4">Easily teach your kids Islamic values through playful stories that build lifelong love for the Deen.</p>
+          <div class="flex gap-3 mt-5">
+            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#signup">Join for free</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#howitworks">Watch how it works</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="page">
-      <div class="container two-col reverse">
-        <div class="text-col">
-          <h2>Earn rewards and inspire everyone.</h2>
-          <p>Earn commissions by helping parents teach kids Islamic values playfully.</p>
-          <a class="btn primary" href="#grow">Become Affiliate With Us</a>
+    <section class="py-12">
+      <div class="max-w-[1126px] mx-auto px-6 flex flex-row-reverse gap-8 items-center">
+        <div class="max-w-[560px]">
+          <h2 class="text-2xl font-semibold mb-3 text-gray-900">Earn rewards and inspire everyone.</h2>
+          <p class="text-gray-600 mb-4">Earn commissions by helping parents teach kids Islamic values playfully.</p>
+          <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#grow">Become Affiliate With Us</a>
         </div>
-        <div class="img-col"><img src="${heroImg}" alt="affiliate"/></div>
+        <div><img src="${heroImg}" alt="affiliate" class="w-[420px] rounded-lg object-cover"/></div>
       </div>
     </section>
 
-    <section class="page section-alt">
-      <div class="container two-col">
-        <div class="img-col"><img src="${heroImg}" alt="kid play"/></div>
-        <div class="text-col">
-          <h2>Big Adventures for Little Muslims</h2>
-          <p>Play games, listen to exciting stories, and earn cool rewards while learning all about the beauty of Islam with your family!</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#signup">Join for free</a>
-            <a class="btn outline" href="#howitworks">Watch how it works</a>
+    <section class="py-12 bg-[#fbfaf9]">
+      <div class="max-w-[1126px] mx-auto px-6 flex gap-8 items-center">
+        <div><img src="${heroImg}" alt="kid play" class="w-[420px] rounded-lg object-cover"/></div>
+        <div class="max-w-[560px]">
+          <h2 class="text-2xl font-semibold mb-3 text-gray-900">Big Adventures for Little Muslims</h2>
+          <p class="text-gray-600 mb-4">Play games, listen to exciting stories, and earn cool rewards while learning all about the beauty of Islam with your family!</p>
+          <div class="flex gap-3 mt-5">
+            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#signup">Join for free</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#howitworks">Watch how it works</a>
           </div>
         </div>
       </div>
     </section>
   `,
   about: () => `
-    <section class="page">
-      <h2>About Us</h2>
-      <p>MoonTree Learning builds playful, values-driven e-learning for families to teach Islamic principles to children.</p>
-      <p>Our mission is to make faith learning joyful and accessible.</p>
+    <section class="p-8 max-w-[1126px] mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-3 text-gray-900">About Us</h2>
+      <p class="text-gray-600 mb-4">MoonTree Learning builds playful, values-driven e-learning for families to teach Islamic principles to children.</p>
+      <p class="text-gray-600">Our mission is to make faith learning joyful and accessible.</p>
     </section>
   `,
   faqs: () => `
-    <section class="page">
-      <h2>FAQs</h2>
-      <details>
-        <summary>Is content suitable for kids?</summary>
-        <p>Yes — stories and activities are designed for young learners and families.</p>
+    <section class="p-8 max-w-[1126px] mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-3 text-gray-900">FAQs</h2>
+      <details class="mb-4">
+        <summary class="font-semibold text-gray-900 cursor-pointer">Is content suitable for kids?</summary>
+        <p class="text-gray-600 mt-2">Yes — stories and activities are designed for young learners and families.</p>
       </details>
       <details>
-        <summary>Do I need to pay to start?</summary>
-        <p>You can sign up for free and access sample lessons.</p>
+        <summary class="font-semibold text-gray-900 cursor-pointer">Do I need to pay to start?</summary>
+        <p class="text-gray-600 mt-2">You can sign up for free and access sample lessons.</p>
       </details>
     </section>
   `,
   grow: () => `
-    <section class="page">
-      <h2>Grow With Us</h2>
-      <p>Partner, create, or join our affiliate program to help more families learn together.</p>
-      <a class="btn primary" href="#signup">Become an Affiliate</a>
+    <section class="p-8 max-w-[1126px] mx-auto px-6">
+      <h2 class="text-2xl font-semibold mb-3 text-gray-900">Grow With Us</h2>
+      <p class="text-gray-600 mb-4">Partner, create, or join our affiliate program to help more families learn together.</p>
+      <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#signup">Become an Affiliate</a>
     </section>
   `,
   auth: (mode = 'signin') => `
-    <section class="page auth-page">
-      <div class="auth-tabs">
-        <button data-mode="signin" class="tab ${mode === 'signin' ? 'active' : ''}">Sign In</button>
-        <button data-mode="signup" class="tab ${mode === 'signup' ? 'active' : ''}">Sign Up</button>
+    <section class="p-8 max-w-[1126px] mx-auto px-6">
+      <div class="flex gap-2 mb-4">
+        <button data-mode="signin" class="px-3 py-2 rounded bg-transparent border border-transparent cursor-pointer ${mode === 'signin' ? 'bg-purple-500 text-white' : ''}">Sign In</button>
+        <button data-mode="signup" class="px-3 py-2 rounded bg-transparent border border-transparent cursor-pointer ${mode === 'signup' ? 'bg-purple-500 text-white' : ''}">Sign Up</button>
       </div>
-      <div class="auth-forms">
-        <form id="auth-signin-form" class="auth-form" style="display: ${mode === 'signin' ? 'block' : 'none'}">
-          <label>Email <input name="email" type="email" required></label>
-          <label>Password <input name="password" type="password" required></label>
-          <button class="btn primary" type="submit">Sign In</button>
+      <div>
+        <form id="auth-signin-form" class="flex flex-col gap-3 max-w-[360px]" style="display: ${mode === 'signin' ? 'block' : 'none'}">
+          <label class="flex flex-col gap-1.5 text-sm">Email <input name="email" type="email" required class="p-2 rounded border border-gray-200"></label>
+          <label class="flex flex-col gap-1.5 text-sm">Password <input name="password" type="password" required class="p-2 rounded border border-gray-200"></label>
+          <button class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" type="submit">Sign In</button>
         </form>
 
-        <form id="auth-signup-form" class="auth-form" style="display: ${mode === 'signup' ? 'block' : 'none'}">
-          <label>Email <input name="email" type="email" required></label>
-          <label>Password <input name="password" type="password" required></label>
-          <button class="btn primary" type="submit">Sign Up</button>
+        <form id="auth-signup-form" class="flex flex-col gap-3 max-w-[360px]" style="display: ${mode === 'signup' ? 'block' : 'none'}">
+          <label class="flex flex-col gap-1.5 text-sm">Email <input name="email" type="email" required class="p-2 rounded border border-gray-200"></label>
+          <label class="flex flex-col gap-1.5 text-sm">Password <input name="password" type="password" required class="p-2 rounded border border-gray-200"></label>
+          <button class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" type="submit">Sign Up</button>
         </form>
       </div>
     </section>
   `,
 
   elearning: (userEmail) => `
-    <section class="page elearning-page">
-      <div class="elearning-header">
-        <h2>Welcome back, ${userEmail || 'Learner'}</h2>
-        <div class="player-controls">
-          <button id="logout" class="btn outline">Logout</button>
+    <section class="p-8 max-w-[1126px] mx-auto px-6">
+      <div class="flex justify-between items-center gap-3 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-900">Welcome back, ${userEmail || 'Learner'}</h2>
+        <div>
+          <button id="logout" class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all">Logout</button>
         </div>
       </div>
 
-      <div class="courses-grid">
-        <div class="course-card" data-src="https://www.w3schools.com/html/mov_bbb.mp4">
-          <img src="${heroImg}" alt="course">
-          <div class="card-body">
-            <h3>Big Adventures for Little Muslims</h3>
-            <div class="course-meta">
-              <div class="meta-left">By MoonTree • 2h 30m</div>
-              <div class="price">Free</div>
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-[18px] mt-[18px]">
+        <div class="course-card border border-gray-200 rounded overflow-hidden bg-white shadow-sm flex flex-col" data-src="https://www.w3schools.com/html/mov_bbb.mp4">
+          <img src="${heroImg}" alt="course" class="w-full h-[140px] object-cover">
+          <div class="p-3 flex-1 flex flex-col">
+            <h3 class="text-base font-semibold text-gray-900 mb-2">Big Adventures for Little Muslims</h3>
+            <div class="text-gray-600 text-sm mt-auto flex justify-between items-center mb-3">
+              <div>By MoonTree • 2h 30m</div>
+              <div class="font-bold text-gray-900">Free</div>
             </div>
-            <button class="btn watch">Watch</button>
+            <button class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all text-sm watch">Watch</button>
           </div>
         </div>
 
-        <div class="course-card" data-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
-          <img src="${heroImg}" alt="course">
-          <div class="card-body">
-            <h3>Stories & Values</h3>
-            <div class="course-meta">
-              <div class="meta-left">By MoonTree • 45m</div>
-              <div class="price">$4.99</div>
+        <div class="course-card border border-gray-200 rounded overflow-hidden bg-white shadow-sm flex flex-col" data-src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+          <img src="${heroImg}" alt="course" class="w-full h-[140px] object-cover">
+          <div class="p-3 flex-1 flex flex-col">
+            <h3 class="text-base font-semibold text-gray-900 mb-2">Stories & Values</h3>
+            <div class="text-gray-600 text-sm mt-auto flex justify-between items-center mb-3">
+              <div>By MoonTree • 45m</div>
+              <div class="font-bold text-gray-900">$4.99</div>
             </div>
-            <button class="btn watch">Watch</button>
+            <button class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all text-sm watch">Watch</button>
           </div>
         </div>
       </div>
 
-      <div class="video-player">
+      <div class="mt-5 flex justify-center">
         <video id="course-video" controls width="720">
           <source src="" type="video/mp4">
           Your browser does not support the video tag.
@@ -288,7 +288,7 @@ function render() {
       content += templates.elearning(getLoggedUser())
       break
     default:
-      content += `<section class="page"><h2>Page not found</h2></section>`
+        content += `<section class="p-8 max-w-[1126px] mx-auto px-6"><h2 class="text-2xl font-semibold mb-3 text-gray-900">Page not found</h2></section>`
   }
 
   content += templates.footer()
@@ -356,7 +356,7 @@ function render() {
   }
 
   // Dropdown touch toggle support
-  const dropdowns = app.querySelectorAll('.dropdown')
+    const dropdowns = app.querySelectorAll('[data-dropdown]')
   dropdowns.forEach(d => {
     d.addEventListener('click', (ev) => {
       // toggle open class for touch devices
