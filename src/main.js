@@ -1,5 +1,6 @@
 import './style.css'
 import heroImg from './assets/hero.svg'
+import authImg from './assets/auth.svg'
 import section2Img from './assets/section2.svg'
 import section3Img from './assets/section3.svg'
 import section4Img from './assets/section4.svg'
@@ -49,8 +50,10 @@ const templates = {
           </div>
         </div>
         <div class="flex gap-3">
-          <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg " href="#auth">Sign In</a>
-          <a class="inline-block px-3 py-2 rounded-lg border border-purple-600 no-underline text-purple-600 hover:bg-gray-100 hover:shadow-lg" href="#auth">Sign Up</a>
+          <a class="inline-flex gap-2 px-4 py-2 rounded-lg bg-purple-600 no-underline text-white hover:bg-purple-600 hover:shadow-lg" href="/#auth-signin" target="_blank">Login <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+          </svg>
+          </a>
         </div>
       </nav>
     </header>
@@ -95,23 +98,29 @@ const templates = {
       <div class="max-w-[1126px] mx-auto px-6 flex justify-between items-center gap-6">
         <div class="flex-1 text-left">
           <div class="text-purple-600 font-bold tracking-wider text-sm mb-3">E-COURSE PLATFORM</div>
-          <h1 class="text-5xl font-bold mb-6 text-gray-900">A Fun Way to Learn Islamic Life as a Family</h1>
+          <h1 class="text-5xl font-bold mb-6 text-gray-900 leading-tight">A Fun Way to Learn Islamic Life as a Family</h1>
           <p class="text-lg text-gray-600 max-w-[560px] mb-4">Interactive stories and playful activities connecting your family to Islamic values and meaningful lessons through joy and wonder.</p>
           <div class="flex gap-3 mt-5 mb-7">
-            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#signup">Join for free</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-600 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Join for free</a>
             <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#howitworks">Watch how it works</a>
           </div>
 
           <div class="flex gap-6 mt-7 items-center">
             <div class="flex flex-col items-start">
-              <div class="font-bold text-xl text-gray-900">700+</div>
+              <div class="font-bold text-xl text-gray-900">
+                <span class="count-up" data-target="700">0</span>+
+              </div>
               <div class="text-sm text-gray-600">Hours of content</div>
             </div>
+            
             <div class="flex flex-col items-start pl-6 border-l border-gray-200">
-              <div class="font-bold text-xl text-gray-900">575k+</div>
+              <div class="font-bold text-xl text-gray-900">
+                <span class="count-up" data-target="575">0</span>k+
+              </div>
               <div class="text-sm text-gray-600">GlobalTalk Users</div>
             </div>
           </div>
+
         </div>
         <div class="flex-1 flex justify-center">
           <img src="${heroImg}" alt="hero" />
@@ -126,7 +135,7 @@ const templates = {
           <h2 class="text-2xl font-semibold mb-3 text-gray-900">Nurturing family faith with joy.</h2>
           <p class="text-gray-600 mb-4">Easily teach your kids Islamic values through playful stories that build lifelong love for the Deen.</p>
           <div class="flex gap-3 mt-5">
-            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#signup">Join for free</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Join for free</a>
             <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#howitworks">Watch how it works</a>
           </div>
         </div>
@@ -146,12 +155,12 @@ const templates = {
 
     <section class="py-12 bg-[#fbfaf9]">
       <div class="max-w-[1126px] mx-auto px-6 flex gap-8 items-center">
-        <div><img src="${section4Img}" alt="kid play" class="w-[420px] rounded-lg object-cover"/></div>
+        <div><img src="${section4Img}" alt="kid play" class="w-[320px] rounded-lg object-cover"/></div>
         <div class="max-w-[560px]">
           <h2 class="text-2xl font-semibold mb-3 text-gray-900">Big Adventures for Little Muslims</h2>
           <p class="text-gray-600 mb-4">Play games, listen to exciting stories, and earn cool rewards while learning all about the beauty of Islam with your family!</p>
           <div class="flex gap-3 mt-5">
-            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#signup">Join for free</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Join for free</a>
             <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#howitworks">Watch how it works</a>
           </div>
         </div>
@@ -182,27 +191,56 @@ const templates = {
     <section class="p-8 max-w-[1126px] mx-auto px-6">
       <h2 class="text-2xl font-semibold mb-3 text-gray-900">Grow With Us</h2>
       <p class="text-gray-600 mb-4">Partner, create, or join our affiliate program to help more families learn together.</p>
-      <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#signup">Become an Affiliate</a>
+      <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Become an Affiliate</a>
     </section>
   `,
   auth: (mode = 'signin') => `
-    <section class="p-8 max-w-[1126px] mx-auto px-6">
-      <div class="flex gap-2 mb-4">
-        <button data-mode="signin" class="px-3 py-2 rounded bg-transparent border border-transparent cursor-pointer ${mode === 'signin' ? 'bg-purple-500 text-white' : ''}">Sign In</button>
-        <button data-mode="signup" class="px-3 py-2 rounded bg-transparent border border-transparent cursor-pointer ${mode === 'signup' ? 'bg-purple-500 text-white' : ''}">Sign Up</button>
-      </div>
-      <div>
-        <form id="auth-signin-form" class="flex flex-col gap-3 max-w-[360px]" style="display: ${mode === 'signin' ? 'block' : 'none'}">
-          <label class="flex flex-col gap-1.5 text-sm">Email <input name="email" type="email" required class="p-2 rounded border border-gray-200"></label>
-          <label class="flex flex-col gap-1.5 text-sm">Password <input name="password" type="password" required class="p-2 rounded border border-gray-200"></label>
-          <button class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" type="submit">Sign In</button>
-        </form>
+    <section class="h-screen flex items-center bg-[#f6f6f6]">
+      <div class="w-full h-full">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] h-full w-full bg-white overflow-hidden">
+          <div class="p-10 lg:p-12">
+            <div class="mb-8 max-w-[540px]">
+              <div class="text-purple-600 font-semibold tracking-wide uppercase mb-3">Welcome to MoonTree</div>
+              <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Get Started Now</h1>
+              <p class="text-gray-600 leading-relaxed">Sign in or join for free to unlock playful Islamic lessons, stories, and family learning activities.</p>
+            </div>
 
-        <form id="auth-signup-form" class="flex flex-col gap-3 max-w-[360px]" style="display: ${mode === 'signup' ? 'block' : 'none'}">
-          <label class="flex flex-col gap-1.5 text-sm">Email <input name="email" type="email" required class="p-2 rounded border border-gray-200"></label>
-          <label class="flex flex-col gap-1.5 text-sm">Password <input name="password" type="password" required class="p-2 rounded border border-gray-200"></label>
-          <button class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" type="submit">Sign Up</button>
-        </form>
+            <div class="flex flex-wrap gap-3 mb-8 auth-tabs">
+              <button data-mode="signin" class="tab px-5 py-3 rounded-full border text-sm font-medium ${mode === 'signin' ? 'bg-purple-500 text-white border-transparent' : 'bg-white text-gray-700 border-gray-200'}">Sign In</button>
+              <button data-mode="signup" class="tab px-5 py-3 rounded-full border text-sm font-medium ${mode === 'signup' ? 'bg-purple-500 text-white border-transparent' : 'bg-white text-gray-700 border-gray-200'}">Sign Up</button>
+            </div>
+
+            <div class="space-y-4">
+              <form id="auth-signin-form" class="flex flex-col gap-4" style="display: ${mode === 'signin' ? 'block' : 'none'}">
+                <label class="flex flex-col gap-2 text-sm text-gray-700">Email
+                  <input name="email" type="email" required class="w-full rounded-xl border border-gray-200 bg-gray-50 p-3 text-sm text-gray-900 focus:border-purple-500 focus:outline-none" />
+                </label>
+                <label class="flex flex-col gap-2 text-sm text-gray-700">Password
+                  <input name="password" type="password" required class="w-full rounded-xl border border-gray-200 bg-gray-50 p-3 text-sm text-gray-900 focus:border-purple-500 focus:outline-none" />
+                </label>
+                <button class="inline-block w-full rounded-xl bg-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-purple-600" type="submit">Sign In</button>
+              </form>
+
+              <form id="auth-signup-form" class="flex flex-col gap-4" style="display: ${mode === 'signup' ? 'block' : 'none'}">
+                <label class="flex flex-col gap-2 text-sm text-gray-700">Email
+                  <input name="email" type="email" required class="w-full rounded-xl border border-gray-200 bg-gray-50 p-3 text-sm text-gray-900 focus:border-purple-500 focus:outline-none" />
+                </label>
+                <label class="flex flex-col gap-2 text-sm text-gray-700">Password
+                  <input name="password" type="password" required class="w-full rounded-xl border border-gray-200 bg-gray-50 p-3 text-sm text-gray-900 focus:border-purple-500 focus:outline-none" />
+                </label>
+                <button class="inline-block w-full rounded-xl bg-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-purple-600" type="submit">Create Account</button>
+              </form>
+            </div>
+
+            <div class="mt-6 text-sm text-gray-500">
+              ${mode === 'signin' ? 'New here? <a href="#auth-signup" class="font-semibold text-purple-600 hover:underline">Create your account</a>' : 'Already have an account? <a href="#auth-signin" class="font-semibold text-purple-600 hover:underline">Sign in</a>'}
+            </div>
+          </div>
+
+          <div class="hidden lg:block bg-slate-100">
+            <img src="${authImg}" alt="Auth illustration" class="h-full w-full object-cover" />
+          </div>
+        </div>
       </div>
     </section>
   `,
@@ -260,10 +298,39 @@ function getLoggedUser() {
   return localStorage.getItem('userEmail') || ''
 }
 
+function animateCounters() {
+  const counters = app.querySelectorAll('.count-up')
+  const animationDuration = 700 // Total animation time in milliseconds (2 seconds)
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target') || 0
+    const startTime = performance.now()
+
+    const updateCount = (currentTime) => {
+      const elapsedTime = currentTime - startTime
+      const progress = Math.min(elapsedTime / animationDuration, 1)
+      const currentValue = Math.floor(progress * target)
+
+      counter.innerText = currentValue
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCount)
+      } else {
+        counter.innerText = target
+      }
+    }
+
+    requestAnimationFrame(updateCount)
+  })
+}
+
 function render() {
   const hash = location.hash.replace('#', '')
   let content = ''
-  content += templates.navbar()
+  const showNavFooter = !(hash === 'auth' || hash === 'auth-signin' || hash === 'auth-signup')
+  if (showNavFooter) {
+    content += templates.navbar()
+  }
 
   switch (true) {
     case hash === '' || hash === 'home':
@@ -294,8 +361,15 @@ function render() {
         content += `<section class="p-8 max-w-[1126px] mx-auto px-6"><h2 class="text-2xl font-semibold mb-3 text-gray-900">Page not found</h2></section>`
   }
 
-  content += templates.footer()
+  if (showNavFooter) {
+    content += templates.footer()
+  }
   app.innerHTML = content
+
+  // animate the home page counter only when the home page is shown
+  if ((hash === '' || hash === 'home') && app.querySelector('.count-up')) {
+    animateCounters()
+  }
 
   // Hook up forms and interactive behaviour
   // Auth forms (signin/signup)
