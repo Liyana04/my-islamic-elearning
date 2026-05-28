@@ -1,7 +1,9 @@
 import './style.css'
 import heroImg from './assets/hero.svg'
 import section2Img from './assets/section2.svg'
-import logoImg from '/favicon.svg'
+import section3Img from './assets/section3.svg'
+import section4Img from './assets/section4.svg'
+import logoImg from '/logo.svg'
 
 const app = document.querySelector('#app')
 
@@ -22,7 +24,7 @@ const templates = {
       <nav class="flex items-center gap-3">
         <div>${navLink('Home', '')}</div>
         <div class="relative group">
-          <a class="text-gray-900 px-2.5 py-2 rounded hover:text-purple-600" href="#about">About Us ▾</a>
+          <div class="text-gray-900 px-2.5 py-2 cursor-pointer hover:text-purple-600" >About Us ▾</div>
           <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 p-2.5 rounded-lg min-w-[180px] shadow-lg z-60">
             <a href="#about-team" class="block px-2.5 py-2 rounded hover:bg-gray-100">Our Experts</a>
             <a href="#about-mission" class="block px-2.5 py-2 rounded hover:bg-gray-100">Our Mission</a>
@@ -31,7 +33,7 @@ const templates = {
         </div>
         <div>${navLink('FAQs', 'faqs')}</div>
         <div class="relative group">
-          <a class="text-gray-900 px-2.5 py-2 rounded hover:text-purple-600" href="#grow">Grow With Us ▾</a>
+          <div class="text-gray-900 px-2.5 py-2 cursor-pointer hover:text-purple-600" >Grow With Us ▾</div>
           <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 p-2.5 rounded-lg min-w-[180px] shadow-lg z-60">
             <a href="#grow-creators" class="block px-2.5 py-2 rounded hover:bg-gray-100">As Creators</a>
             <a href="#grow-preschools" class="block px-2.5 py-2 rounded hover:bg-gray-100">As Preschools</a>
@@ -39,7 +41,7 @@ const templates = {
           </div>
         </div>
         <div class="relative group">
-          <a class="text-gray-900 px-2.5 py-2 rounded hover:text-purple-600" href="#products">Our Products ▾</a>
+          <div class="text-gray-900 px-2.5 py-2 cursor-pointer hover:text-purple-600" >Our Products ▾</div>
           <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 p-2.5 rounded-lg min-w-[180px] shadow-lg z-60">
             <a href="#prod-1" class="block px-2.5 py-2 rounded hover:bg-gray-100">Product 1</a>
             <a href="#prod-2" class="block px-2.5 py-2 rounded hover:bg-gray-100">Product 2</a>
@@ -47,8 +49,8 @@ const templates = {
           </div>
         </div>
         <div class="flex gap-3">
-          <a class="inline-block px-3 py-2 rounded-lg no-underline text-gray-900 hover:bg-gray-100" href="#auth-signin">Sign In</a>
-          <a class="inline-block px-3 py-2 rounded-lg border border-gray-200 no-underline text-gray-900 hover:bg-gray-100" href="#auth-signup">Sign Up</a>
+          <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg " href="#auth">Sign In</a>
+          <a class="inline-block px-3 py-2 rounded-lg border border-purple-600 no-underline text-purple-600 hover:bg-gray-100 hover:shadow-lg" href="#auth">Sign Up</a>
         </div>
       </nav>
     </header>
@@ -92,7 +94,7 @@ const templates = {
     <section class="py-12">
       <div class="max-w-[1126px] mx-auto px-6 flex justify-between items-center gap-6">
         <div class="flex-1 text-left">
-          <div class="text-blue-600 font-bold tracking-wider text-sm mb-3">E-COURSE PLATFORM</div>
+          <div class="text-purple-600 font-bold tracking-wider text-sm mb-3">E-COURSE PLATFORM</div>
           <h1 class="text-5xl font-bold mb-6 text-gray-900">A Fun Way to Learn Islamic Life as a Family</h1>
           <p class="text-lg text-gray-600 max-w-[560px] mb-4">Interactive stories and playful activities connecting your family to Islamic values and meaningful lessons through joy and wonder.</p>
           <div class="flex gap-3 mt-5 mb-7">
@@ -133,18 +135,18 @@ const templates = {
 
     <section class="py-12">
       <div class="max-w-[1126px] mx-auto px-6 flex flex-row-reverse gap-8 items-center">
-        <div class="max-w-[560px]">
+      <div><img src="${section3Img}" alt="affiliate" class="w-[420px] rounded-lg object-cover"/></div>  
+      <div class="max-w-[560px]">
           <h2 class="text-2xl font-semibold mb-3 text-gray-900">Earn rewards and inspire everyone.</h2>
           <p class="text-gray-600 mb-4">Earn commissions by helping parents teach kids Islamic values playfully.</p>
           <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#grow">Become Affiliate With Us</a>
         </div>
-        <div><img src="${heroImg}" alt="affiliate" class="w-[420px] rounded-lg object-cover"/></div>
       </div>
     </section>
 
     <section class="py-12 bg-[#fbfaf9]">
       <div class="max-w-[1126px] mx-auto px-6 flex gap-8 items-center">
-        <div><img src="${heroImg}" alt="kid play" class="w-[420px] rounded-lg object-cover"/></div>
+        <div><img src="${section4Img}" alt="kid play" class="w-[420px] rounded-lg object-cover"/></div>
         <div class="max-w-[560px]">
           <h2 class="text-2xl font-semibold mb-3 text-gray-900">Big Adventures for Little Muslims</h2>
           <p class="text-gray-600 mb-4">Play games, listen to exciting stories, and earn cool rewards while learning all about the beauty of Islam with your family!</p>
