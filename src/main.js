@@ -1,5 +1,6 @@
 import './style.css'
 import heroImg from './assets/hero.svg'
+import section2Img from './assets/section2.svg'
 import logoImg from '/favicon.svg'
 
 const app = document.querySelector('#app')
@@ -16,12 +17,12 @@ const templates = {
   navbar: () => `
     <header class="flex justify-between items-center px-6 py-[18px] border-b border-gray-200">
       <div class="flex items-center gap-3">
-        <img src="${logoImg}" alt="logo" class="w-12 h-12 object-cover rounded-lg"/>
+        <img src="${logoImg}" alt="logo" class="object-cover rounded-lg"/>
       </div>
       <nav class="flex items-center gap-3">
         <div>${navLink('Home', '')}</div>
         <div class="relative group">
-          <a class="text-gray-900 px-2.5 py-2 rounded hover:bg-gray-100" href="#about">About Us ▾</a>
+          <a class="text-gray-900 px-2.5 py-2 rounded hover:text-purple-600" href="#about">About Us ▾</a>
           <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 p-2.5 rounded-lg min-w-[180px] shadow-lg z-60">
             <a href="#about-team" class="block px-2.5 py-2 rounded hover:bg-gray-100">Our Experts</a>
             <a href="#about-mission" class="block px-2.5 py-2 rounded hover:bg-gray-100">Our Mission</a>
@@ -30,7 +31,7 @@ const templates = {
         </div>
         <div>${navLink('FAQs', 'faqs')}</div>
         <div class="relative group">
-          <a class="text-gray-900 px-2.5 py-2 rounded hover:bg-gray-100" href="#grow">Grow With Us ▾</a>
+          <a class="text-gray-900 px-2.5 py-2 rounded hover:text-purple-600" href="#grow">Grow With Us ▾</a>
           <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 p-2.5 rounded-lg min-w-[180px] shadow-lg z-60">
             <a href="#grow-creators" class="block px-2.5 py-2 rounded hover:bg-gray-100">As Creators</a>
             <a href="#grow-preschools" class="block px-2.5 py-2 rounded hover:bg-gray-100">As Preschools</a>
@@ -38,7 +39,7 @@ const templates = {
           </div>
         </div>
         <div class="relative group">
-          <a class="text-gray-900 px-2.5 py-2 rounded hover:bg-gray-100" href="#products">Our Products ▾</a>
+          <a class="text-gray-900 px-2.5 py-2 rounded hover:text-purple-600" href="#products">Our Products ▾</a>
           <div class="hidden group-hover:block absolute top-full left-0 bg-white border border-gray-200 p-2.5 rounded-lg min-w-[180px] shadow-lg z-60">
             <a href="#prod-1" class="block px-2.5 py-2 rounded hover:bg-gray-100">Product 1</a>
             <a href="#prod-2" class="block px-2.5 py-2 rounded hover:bg-gray-100">Product 2</a>
@@ -118,7 +119,7 @@ const templates = {
 
     <section class="py-12 bg-[#fbfaf9]">
       <div class="max-w-[1126px] mx-auto px-6 flex gap-8 items-center">
-        <div><img src="${heroImg}" alt="family" class="w-[420px] rounded-lg object-cover"/></div>
+        <div><img src="${section2Img}" alt="family" class="w-[420px] rounded-lg object-cover"/></div>
         <div class="max-w-[560px]">
           <h2 class="text-2xl font-semibold mb-3 text-gray-900">Nurturing family faith with joy.</h2>
           <p class="text-gray-600 mb-4">Easily teach your kids Islamic values through playful stories that build lifelong love for the Deen.</p>
