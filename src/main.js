@@ -13,7 +13,7 @@ const DUMMY_ACCOUNT = { email: 'user@example.com', password: 'password' }
 
 // Simple client-side routing using location.hash
 function navLink(label, hash) {
-  return `<a class="text-gray-900 px-2.5 py-2 rounded hover:bg-gray-100" href="#${hash}">${label}</a>`
+  return `<a class="text-gray-900 px-2.5 py-2 cursor-pointer hover:text-purple-600 href="#${hash}">${label}</a>`
 }
 
 const templates = {
@@ -102,7 +102,7 @@ const templates = {
           <p class="text-lg text-gray-600 max-w-[560px] mb-4">Interactive stories and playful activities connecting your family to Islamic values and meaningful lessons through joy and wonder.</p>
           <div class="flex gap-3 mt-5 mb-7">
             <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-600 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Join for free</a>
-            <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#howitworks">Watch how it works</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all open-watch-popup" href="#howitworks">Watch how it works</a>
           </div>
 
           <div class="flex gap-6 mt-7 items-center">
@@ -136,7 +136,7 @@ const templates = {
           <p class="text-gray-600 mb-4">Easily teach your kids Islamic values through playful stories that build lifelong love for the Deen.</p>
           <div class="flex gap-3 mt-5">
             <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Join for free</a>
-            <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#howitworks">Watch how it works</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all open-watch-popup" href="#howitworks">Watch how it works</a>
           </div>
         </div>
       </div>
@@ -160,8 +160,8 @@ const templates = {
           <h2 class="text-2xl font-semibold mb-3 text-gray-900">Big Adventures for Little Muslims</h2>
           <p class="text-gray-600 mb-4">Play games, listen to exciting stories, and earn cool rewards while learning all about the beauty of Islam with your family!</p>
           <div class="flex gap-3 mt-5">
-            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Join for free</a>
-            <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#howitworks">Watch how it works</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-600 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Join for free</a>
+            <a class="inline-block px-3.5 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-900 no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all open-watch-popup" href="#howitworks">Watch how it works</a>
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@ const templates = {
   auth: (mode = 'signin') => `
     <section class="h-screen flex items-center bg-[#f6f6f6]">
       <div class="w-full h-full">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] h-full w-full bg-white overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] h-full w-full bg-white overflow-hidden px-6">
           <div class="p-10 lg:p-12">
             <div class="mb-8 max-w-[540px]">
               <div class="text-purple-600 font-semibold tracking-wide uppercase mb-3">Welcome to MoonTree</div>
@@ -206,7 +206,7 @@ const templates = {
             </div>
 
             <div class="flex flex-wrap gap-3 mb-8 auth-tabs">
-              <button data-mode="signin" class="tab px-5 py-3 rounded-full border text-sm font-medium ${mode === 'signin' ? 'bg-purple-500 text-white border-transparent' : 'bg-white text-gray-700 border-gray-200'}">Sign In</button>
+              <button data-mode="signin" class="tab px-5 py-3 rounded-full border text-sm font-medium ${mode === 'signin' ? 'bg-purple-500 text-white border-transparent' : 'bg-white text-gray-700 border-gray-200'}">Login</button>
               <button data-mode="signup" class="tab px-5 py-3 rounded-full border text-sm font-medium ${mode === 'signup' ? 'bg-purple-500 text-white border-transparent' : 'bg-white text-gray-700 border-gray-200'}">Sign Up</button>
             </div>
 
@@ -244,6 +244,35 @@ const templates = {
       </div>
     </section>
   `,
+
+watchModal: () => `
+  <div id="watch-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/60 p-4">
+    <div class="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+      
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-white">
+        <h3 class="font-bold text-gray-900 text-lg">How it Works?</h3>
+        <button id="close-watch-modal" class="text-4xl text-gray-500 hover:text-gray-800 transition-colors focus:outline-none" aria-label="Close modal">
+          &times;
+        </button>
+      </div>
+      
+      <div class="p-6 bg-white overflow-hidden flex-1 flex items-center justify-center">
+        <div class="w-full aspect-video rounded-xl overflow-hidden bg-black shadow-md">
+          <iframe 
+            class="w-full h-full" 
+            src="https://www.youtube.com/embed/lGind6Cn0Tw?si=YWbtVwvZZUuxmZzi" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+`,
 
   elearning: (userEmail) => `
     <section class="p-8 max-w-[1126px] mx-auto px-6">
@@ -364,6 +393,7 @@ function render() {
   if (showNavFooter) {
     content += templates.footer()
   }
+  content += templates.watchModal()
   app.innerHTML = content
 
   // animate the home page counter only when the home page is shown
@@ -462,6 +492,39 @@ function render() {
           video.play()
         }
       })
+    })
+  }
+
+  const openWatchButtons = app.querySelectorAll('.open-watch-popup')
+  const watchModal = document.getElementById('watch-modal')
+  const closeWatchModal = document.getElementById('close-watch-modal')
+  const toggleWatchModal = (show) => {
+    if (!watchModal) return
+    if (show) {
+      watchModal.classList.remove('hidden')
+      document.body.style.overflow = 'hidden'
+    } else {
+      watchModal.classList.add('hidden')
+      document.body.style.overflow = ''
+    }
+  }
+
+  openWatchButtons.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+      event.preventDefault()
+      toggleWatchModal(true)
+    })
+  })
+
+  if (closeWatchModal) {
+    closeWatchModal.addEventListener('click', () => toggleWatchModal(false))
+  }
+
+  if (watchModal) {
+    watchModal.addEventListener('click', (event) => {
+      if (event.target === watchModal) {
+        toggleWatchModal(false)
+      }
     })
   }
 
