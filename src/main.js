@@ -166,7 +166,7 @@ const templates = {
       <div class="max-w-[1126px] mx-auto px-6 flex gap-8 items-center">
         <div><img src="${section2Img}" alt="family" class="w-[420px] rounded-lg object-cover"/></div>
         <div class="max-w-[560px]">
-          <h2 class="text-2xl font-semibold mb-3 text-gray-900">Nurturing family faith with joy.</h2>
+          <h2 class="text-5xl font-bold mb-6 text-gray-900 leading-tight">Nurturing Family Faith with Joy.</h2>
           <p class="text-gray-600 mb-4">Easily teach your kids Islamic values through playful stories that build lifelong love for the Deen.</p>
           <div class="flex gap-3 mt-5">
             <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Join for free</a>
@@ -180,7 +180,7 @@ const templates = {
       <div class="max-w-[1126px] mx-auto px-6 flex flex-row-reverse gap-8 items-center">
       <div><img src="${section3Img}" alt="affiliate" class="w-[420px] rounded-lg object-cover"/></div>  
       <div class="max-w-[560px]">
-          <h2 class="text-2xl font-semibold mb-3 text-gray-900">Earn rewards and inspire everyone.</h2>
+          <h2 class="text-5xl font-bold mb-6 text-gray-900 leading-tight mb-4">Earn Rewards and Inspire Everyone.</h2>
           <p class="text-gray-600 mb-4">Earn commissions by helping parents teach kids Islamic values playfully.</p>
           <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-500 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="#grow">Become Affiliate With Us</a>
         </div>
@@ -191,7 +191,7 @@ const templates = {
       <div class="max-w-[1126px] mx-auto px-6 flex gap-8 items-center">
         <div><img src="${section4Img}" alt="kid play" class="w-[320px] rounded-lg object-cover"/></div>
         <div class="max-w-[560px]">
-          <h2 class="text-2xl font-semibold mb-3 text-gray-900">Big Adventures for Little Muslims</h2>
+          <h2 class="text-5xl font-bold mb-6 text-gray-900 leading-tight MB-4">Big Adventures for Little Muslims</h2>
           <p class="text-gray-600 mb-4">Play games, listen to exciting stories, and earn cool rewards while learning all about the beauty of Islam with your family!</p>
           <div class="flex gap-3 mt-5">
             <a class="inline-block px-3.5 py-2.5 rounded-lg bg-purple-600 text-white no-underline cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all" href="/#auth-signup" target="_blank">Join for free</a>
@@ -236,12 +236,12 @@ const templates = {
             <div class="mb-8 max-w-[540px]">
               <div class="text-purple-600 font-semibold tracking-wide uppercase mb-3">Welcome to MoonTree</div>
               <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Get Started Now</h1>
-              <p class="text-gray-600 leading-relaxed">Sign in or join for free to unlock playful Islamic lessons, stories, and family learning activities.</p>
+              <p class="text-gray-600 leading-relaxed">Login or join for free to unlock playful Islamic lessons, stories, and family learning activities.</p>
             </div>
 
             <div class="flex flex-wrap gap-3 mb-8 auth-tabs">
-              <button data-mode="signin" class="tab px-5 py-3 rounded-full border text-sm font-medium ${mode === 'signin' ? 'bg-purple-500 text-white border-transparent' : 'bg-white text-gray-700 border-gray-200'}">Login</button>
-              <button data-mode="signup" class="tab px-5 py-3 rounded-full border text-sm font-medium ${mode === 'signup' ? 'bg-purple-500 text-white border-transparent' : 'bg-white text-gray-700 border-gray-200'}">Sign Up</button>
+              <div data-mode="signin" class="tab px-5 py-3 rounded-full border text-sm font-medium ${mode === 'signin' ? 'bg-purple-500 text-white border-transparent' : 'bg-white text-gray-700 border-gray-200'}">Login</div>
+              <div data-mode="signup" class="tab px-5 py-3 rounded-full border text-sm font-medium ${mode === 'signup' ? 'bg-purple-500 text-white border-transparent' : 'bg-white text-gray-700 border-gray-200'}">Sign Up</div>
             </div>
 
             <div class="space-y-4">
