@@ -4,7 +4,15 @@ import authImg from './assets/auth.svg'
 import section2Img from './assets/section2.svg'
 import section3Img from './assets/section3.svg'
 import section4Img from './assets/section4.svg'
+import viteImg from './assets/vite.svg'
+import jsImg from './assets/javascript.svg'
 import logoImg from '/logo.svg'
+
+// sponsor logos 
+import sponsor1 from './assets/logo1.svg'
+import sponsor2 from './assets/logo2.svg'
+import sponsor3 from './assets/logo3.svg'
+import sponsor4 from './assets/logo4.svg'
 
 const app = document.querySelector('#app')
 
@@ -94,7 +102,7 @@ const templates = {
     </footer>
   `,
   home: () => `
-    <section class="py-12">
+    <section class="py-8">
       <div class="max-w-[1126px] mx-auto px-6 flex justify-between items-center gap-6">
         <div class="flex-1 text-left">
           <div class="text-purple-600 font-bold tracking-wider text-sm mb-3">E-COURSE PLATFORM</div>
@@ -127,6 +135,32 @@ const templates = {
         </div>
       </div>
     </section>
+
+<section class="h-[100px] bg-white overflow-hidden">
+  <div class="max-w-[1126px] mx-auto px-6 h-full">
+    <div class="relative h-full overflow-hidden">
+      
+      <div class="animate-marquee flex h-full items-center gap-10 whitespace-nowrap">
+        
+        <div class="flex items-center gap-10 shrink-0">
+          <img src="${sponsor1}" alt="Logo 1" class="h-[50px] object-contain" />
+          <img src="${sponsor2}" alt="Logo 2" class="h-[50px] object-contain" />
+          <img src="${sponsor3}" alt="Logo 3" class="h-[50px] object-contain" />
+          <img src="${sponsor4}" alt="Logo 4" class="h-[50px] object-contain" />
+        </div>
+
+        <div class="flex items-center gap-10 shrink-0" aria-hidden="true">
+          <img src="${sponsor1}" alt="Logo 1" class="h-[50px] object-contain" />
+          <img src="${sponsor2}" alt="Logo 2" class="h-[50px] object-contain" />
+          <img src="${sponsor3}" alt="Logo 3" class="h-[50px] object-contain" />
+          <img src="${sponsor4}" alt="Logo 4" class="h-[50px] object-contain" />
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <section class="py-12 bg-[#fbfaf9]">
       <div class="max-w-[1126px] mx-auto px-6 flex gap-8 items-center">
@@ -353,6 +387,26 @@ function animateCounters() {
   })
 }
 
+function initSponsorSlider() {
+  const track = document.querySelector('.sponsor-track')
+  if (!track) return
+
+  const speed = 0.4 // px per frame
+  let position = 0
+
+  const animate = () => {
+    position += speed
+    if (position >= track.scrollWidth / 2) {
+      position = 0
+    }
+    track.style.transform = `translateX(${-position}px)`
+    requestAnimationFrame(animate)
+  }
+
+  track.style.willChange = 'transform'
+  animate()
+}
+
 function render() {
   const hash = location.hash.replace('#', '')
   let content = ''
@@ -399,6 +453,11 @@ function render() {
   // animate the home page counter only when the home page is shown
   if ((hash === '' || hash === 'home') && app.querySelector('.count-up')) {
     animateCounters()
+  }
+
+  // start sponsor slider when present
+  if (app.querySelector('.sponsor-track')) {
+    initSponsorSlider()
   }
 
   // Hook up forms and interactive behaviour
@@ -506,6 +565,14 @@ function render() {
     } else {
       watchModal.classList.add('hidden')
       document.body.style.overflow = ''
+
+      //close the video and reset src to stop playback when modal is closed
+      const videoIframe = watchModal.querySelector('iframe')
+      if (videoIframe) {
+        const currentSrc = videoIframe.src
+        videoIframe.src = ''          // Clear out stream
+        videoIframe.src = currentSrc   // Reset clean for next time
+      }
     }
   }
 
